@@ -1,0 +1,41 @@
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: hsl(236, 33%, 92%);
+}
+
+.list-and-functions {
+  position: relative;
+  top: -50px;
+}
+
+.drag-and-drop-sign {
+  text-align: center;
+}
+
+.drag-and-drop-sign p {
+  font-size: 15px;
+}
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .list-and-functions {
+    top: -35px;
+  }
+  .drag-and-drop-sign {
+    position: relative;
+    top: 55px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .list-and-functions {
+    top: -40px;
+  }
+  .drag-and-drop-sign {
+    position: relative;
+    top: 60px;
+  }
+  .drag-and-drop-sign p {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,112 @@
+.status {
+  width: 30%;
+  margin: 0 auto;
+  padding: 1% 1.5%;
+  position: relative;
+}
+
+.status span {
+  font-size: 15px;
+}
+
+.status .light-clear-button:hover{
+  color: hsl(235, 19%, 35%) !important;
+}
+
+.status .dark-clear-button:hover{
+  color: hsl(236, 33%, 92%)!important;
+}
+
+.light-clear-button, .dark-clear-button {
+  margin-left: 62%;
+}
+
+
+.status .light-list-choices, .status .dark-list-choices {
+  width: 42%;
+  text-align: center;
+  position: absolute;
+  left: 28%;
+  top: 31%;
+}
+
+.status .light-list-choices span, .status .dark-list-choices span {
+  margin: 0 3%;
+  font-weight: 700;
+}
+
+.status .light-list-choices span:hover {
+  color: hsl(235, 19%, 35%) !important;
+}
+
+.status .dark-list-choices span:hover {
+  color: hsl(236, 33%, 92%) !important;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .status {
+    width: 90%;
+    padding: 4% 4%;
+  }
+  .light-clear-button, .dark-clear-button {
+    margin-left: 37%;
+  }
+  .status .light-list-choices, .status .dark-list-choices {
+    padding: 4% 4%;
+    width: 100%;
+    left: 0;
+    top: 130%;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .status {
+    width: 57%;
+    padding: 2% 3%;
+  }
+  .status span {
+    font-size: 16px;
+  }
+  .light-clear-button, .dark-clear-button {
+    margin-left: 48%;
+  }
+  .status .light-list-choices, .status .dark-list-choices {
+    padding: 3% 3%;
+    width: 100%;
+    left: 0;
+    top: 130%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .status {
+    width: 40%;
+    padding: 2% 2%;
+  }
+  .status span {
+    font-size: 17px;
+  }
+  .light-clear-button, .dark-clear-button {
+    margin-left: 40%;
+  }
+  .status .light-list-choices, .status .dark-list-choices {
+    padding: 4% 4%;
+    width: 100%;
+    left: 0;
+    top: 130%;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .status {
+    width: 33%;
+    padding: 1.5% 1.5%;
+  }
+  .light-clear-button, .dark-clear-button {
+    margin-left: 55%;
+  }
+  .status .light-list-choices, .status .dark-list-choices {
+    left: 26%;
+    top: 32%;
+  }
+}

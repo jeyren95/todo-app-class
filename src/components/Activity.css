@@ -1,0 +1,103 @@
+.activity {
+  width: 30%;
+  margin: 0 auto;
+  padding: 0.5% 1%;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  position: relative;
+}
+
+.activity-name {
+  margin-left: 12%;
+  margin-top: 2%;
+}
+
+.activity-name p {
+  font-size: 18px;
+}
+
+.activity-name img {
+  position: absolute;
+  right: 6%;
+  top: 35%;
+}
+
+.activity .circle {
+  height: 30px;
+  width: 6%;
+  position: absolute;
+  left: 5%;
+  top: 25%;
+  border-radius: 50%;
+}
+
+.activity .circle img {
+  border-radius: 50%;
+  padding: 30% 34%;
+  background-image: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%))
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .activity {
+    width: 90%;
+  }
+  .activity-name {
+    margin-left: 18%;
+    margin-top: 6%;
+  }
+  .activity-name p {
+    font-size: 15px;
+  }
+  .activity .circle {
+    width: 10%;
+    left: 4%;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .activity {
+    width: 57%;
+  }
+  .activity-name {
+    margin-left: 16%;
+    margin-top: 3.5%;
+  }
+  .activity-name p {
+    font-size: 16px;
+  }
+  .activity .circle {
+    width: 8%;
+    left: 3.5%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .activity {
+    width: 40%;
+  }
+  .activity-name {
+    margin-left: 16%;
+    margin-top: 3.5%;
+  }
+  .activity p {
+    font-size: 17px;
+  }
+  .activity .circle {
+    width: 8.5%;
+    left: 4%;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .activity {
+    width: 33%;
+  }
+  .activity-name {
+    margin-left: 14%;
+    margin-top: 3%;
+  }
+  .activity .circle {
+    width: 7%;
+    left: 4%;
+  }
+}
