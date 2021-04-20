@@ -21,54 +21,61 @@ class App extends React.Component {
     } else {
       this.setState({activityList: [...this.state.activityList, activity]})
       console.log("Activity added")
-      console.log(`Updated activity list: ${this.state.activityList}`)
     }
   }
+
 
   //When the user clicks the cross of that particular activity, remove that activity from activityList
   //This is based on the index of that activity in activityList
   deleteActivity = (index) => {
-    this.state.activityList.splice(index, 1)
-    this.setState({activityList: this.state.activityList})
+    const listToBeUpdated = this.state.activityList
+    listToBeUpdated.splice(index, 1)
+
+    this.setState({activityList: listToBeUpdated})
     console.log("Activity deleted")
   }
 
   //When the user clicks either "All", "Completed" or "active", set the listChoice state accordingly
-  selectListChoice = async (selectedChoice) => {
-    await this.setState({listChoice: selectedChoice})
-    console.log(`${this.state.listChoice} list selected`)
+  selectListChoice = (selectedChoice) => {
+    this.setState({listChoice: selectedChoice})
+    console.log(`${selectedChoice} list selected`)
   }
 
   //When the user checks the activity, add the activity to the completedList
   addCompletedActivity = (activity) => {
-    this.state.completedList.push(activity)
-    this.setState({completedList: this.state.completedList})
-    console.log(this.state.completedList)
+    this.setState({completedList: [...this.state.completedList, activity]})
+    console.log("Completed activity added to the list of completed activities")
   }
+
 
   //When the user checks and then unchecks the activity, delete the activity that was added to the completedList
   deleteFromCompletedList = (activity) => {
-    var index = this.state.completedList.indexOf(activity)
-    this.state.completedList.splice(index, 1)
-    this.setState({completedList: this.state.completedList})
-  }
+    const completedListToBeUpdated = this.state.completedList
+    const indexOfCompletedActivity = this.state.completedList.indexOf(activity)
+    completedListToBeUpdated.splice(indexOfCompletedActivity, 1)
 
+    this.setState({completedList: completedListToBeUpdated})
+    console.log("Activity deleted from completed list")
+  }
 
   //When the user wants to clear the completedList
   //For each activity in the completedList, find the index of that activity in activityList
   //Then delete it from activityList
   //Also reset the completedList state to an empty array
   clearCompletedList = () => {
+    const listToBeUpdated = this.state.activityList
+
     this.state.completedList.forEach((completedActivity) => {
-      var index = this.state.activityList.indexOf(completedActivity)
-      this.state.activityList.splice(index, 1)
+        const indexOfCompletedActivity = this.state.activityList.indexOf(completedActivity)
+        listToBeUpdated.splice(indexOfCompletedActivity, 1)
     })
 
     this.setState({
-      activityList: this.state.activityList,
+      activityList: listToBeUpdated,
       completedList: []
     })
   }
+
 
   //When user clicks the theme button, change the theme state to the opposite of whatever it was
   changeThemeColor =  () => {
@@ -105,23 +112,24 @@ class App extends React.Component {
   handleDrop = (e) => {
     //On dropped the activity, i want to get hold of the data that is being dropped
     //This is done by the e.dataTransfer.getData(key) function
-    var activityToBeDropped = e.dataTransfer.getData("activity_id")
+    const activityToBeDropped = e.dataTransfer.getData("activity_id")
     console.log(`Activity to be dropped is ${activityToBeDropped}`)
 
     //After which i find the index of that activity in the current activity list
-    var activityToBeDroppedIndex = this.state.activityList.indexOf(activityToBeDropped)
+    const activityToBeDroppedIndex = this.state.activityList.indexOf(activityToBeDropped)
 
     //I also want to find the index that i want to drop the activity at
-    var indexToBeDroppedAt = this.state.activityList.indexOf(e.target.innerHTML)
+    const indexToBeDroppedAt = this.state.activityList.indexOf(e.target.innerHTML)
     console.log(`Index position to be dropped at is ${indexToBeDroppedAt}`)
 
     //I will splice out the activity that needs to be dropped from the list
-    this.state.activityList.splice(activityToBeDroppedIndex, 1)
+    const listToBeUpdated = this.state.activityList
+    listToBeUpdated.splice(activityToBeDroppedIndex, 1)
 
     //And then add that activity to the desired index in the activity list
-    this.state.activityList.splice(indexToBeDroppedAt, 0, activityToBeDropped)
+    listToBeUpdated.splice(indexToBeDroppedAt, 0, activityToBeDropped)
 
-    this.setState({activityList: this.state.activityList})
+    this.setState({activityList: listToBeUpdated})
     console.log(`Rearranged activity list: ${this.state.activityList}`)
   }
 
