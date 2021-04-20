@@ -19,9 +19,9 @@ class App extends React.Component {
     if (this.state.activityList.includes(activity)) {
       alert("Activity is already on the list!")
     } else {
-      this.state.activityList.push(activity)
-      this.setState({activityList: this.state.activityList})
+      this.setState({activityList: [...this.state.activityList, activity]})
       console.log("Activity added")
+      console.log(`Updated activity list: ${this.state.activityList}`)
     }
   }
 
