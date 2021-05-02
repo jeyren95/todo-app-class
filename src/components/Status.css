@@ -18,7 +18,8 @@
 }
 
 .light-clear-button, .dark-clear-button {
-  margin-left: 62%;
+  position: relative;
+  left: 62%;
 }
 
 
@@ -43,13 +44,23 @@
   color: hsl(236, 33%, 92%) !important;
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media (max-width: 360px) {
+  .light-clear-button, .dark-clear-button {
+    left: 31%;
+  }
+}
+
+@media (min-width: 361px) and (max-width: 480px) {
+  .light-clear-button, .dark-clear-button {
+    left: 40%;
+  }
+}
+
+
+@media (max-width: 480px) {
   .status {
     width: 90%;
     padding: 4% 4%;
-  }
-  .light-clear-button, .dark-clear-button {
-    margin-left: 37%;
   }
   .status .light-list-choices, .status .dark-list-choices {
     padding: 4% 4%;
@@ -68,7 +79,7 @@
     font-size: 16px;
   }
   .light-clear-button, .dark-clear-button {
-    margin-left: 48%;
+    left: 48%;
   }
   .status .light-list-choices, .status .dark-list-choices {
     padding: 3% 3%;
@@ -87,7 +98,7 @@
     font-size: 17px;
   }
   .light-clear-button, .dark-clear-button {
-    margin-left: 40%;
+    left: 40%;
   }
   .status .light-list-choices, .status .dark-list-choices {
     padding: 4% 4%;
@@ -103,7 +114,7 @@
     padding: 1.5% 1.5%;
   }
   .light-clear-button, .dark-clear-button {
-    margin-left: 55%;
+    left: 57%;
   }
   .status .light-list-choices, .status .dark-list-choices {
     left: 26%;
